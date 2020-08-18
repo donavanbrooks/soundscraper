@@ -1,4 +1,4 @@
-# SoundScraper
+# Soundscraper
 
 Intro to GO Project
 
