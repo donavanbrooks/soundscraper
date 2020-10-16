@@ -1,4 +1,4 @@
-package parser
+package internal
 
 import (
 	"io"
@@ -15,7 +15,7 @@ type HTMLElement struct {
 
 type WebsiteTemplate struct {
 	Name        string
-	URL         string
+	BaseURL     string
 	Base        HTMLElement
 	Artist      HTMLElement
 	Title       HTMLElement
@@ -39,7 +39,7 @@ type Album struct {
 }
 
 func ScrapeWebsite(website WebsiteTemplate) ([]Album, error) {
-	resp, err := http.Get(website.URL)
+	resp, err := http.Get(website.BaseURL)
 
 	if err != nil {
 		return nil, err
